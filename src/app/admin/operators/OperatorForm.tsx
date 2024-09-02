@@ -90,7 +90,7 @@ export default function Page() {
 
   
   return (
-    <> 
+    <div className='max-width'> 
     <header className='bg-white p-0 mb-2 fixed left-64 right-0 top-0 h-16 border-b-2 border-blue-300'>
       <div className='flex items-start group '> 
             {/* <Image 
@@ -98,25 +98,13 @@ export default function Page() {
               alt="logo" 
               className='right-3 w-16 h-16 bottom-6'
             />  */}
-            <h1 className='text-center text-black mt-3 ml-4 
-              text-3xl font-body'>Operator</h1>
+            <h1 className='text-center text-black mt-3 ml-4 text-3xl font-body'>Operator</h1>
           </div>
       
-        <button
-          type="button"
-          className=""
-          id="user-menu-button"
-          onClick={toggleDropdown}
-        >
+        <button type="button"className="" id="user-menu-button"onClick={toggleDropdown}>
           <span className="sr-only"></span>
-          <img
-            className="absolute top-2 right-3 w-10 h-10 rounded-full"
-            src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gough.png"
-            alt="user photo"
-            
-          />
-        
-        </button>
+          <img className="absolute top-2 right-3 w-10 h-10 rounded-full" src="https://flowbite.s3.amazonaws.com/blocks/marketing-ui/avatars/michael-gough.png" alt="user photo"/>
+      </button>
 
         <div
           className={`${
@@ -206,7 +194,7 @@ export default function Page() {
                     </div>
 
 
-    <table className="  text-left dark:text-gray-400" style={{marginLeft: '-9rem',width: '101rem',fontFamily: 'font-sans' }}>
+    <table className=" max-width text-left dark:text-gray-400" style={{marginLeft: '-9rem',width: '101rem',fontFamily: 'font-sans' }}>
                   <thead className='  dark:text-gray-500 ' style={{height: '3rem', width: '4rem' }} >
                       
                       <tr className=" text-gray-600 border-b-2 border-gray-200 border-t-2">
@@ -507,7 +495,7 @@ export default function Page() {
   )}
 
 
-   </>
+   </div>
 
  );
 }

@@ -115,12 +115,7 @@ const VanForm = () => {
               text-3xl font-body'>Vans</h1>
           </div>
       
-        <button
-          type="button"
-          className=""
-          id="user-menu-button"
-          onClick={toggleDropdown}
-        >
+        <button type="button"className=""id="user-menu-button"onClick={toggleDropdown} >
           <span className="sr-only"></span>
           <img
             className="absolute top-2 right-3 w-10 h-10 rounded-full"

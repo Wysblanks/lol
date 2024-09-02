@@ -3,6 +3,9 @@
 import React, { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import axios from 'axios';
+import Image from 'next/image';
+import logo from '../app/images/logo.png';
+import bg from '../app/images/bg.jpg';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
@@ -31,29 +34,54 @@ const LoginPage = () => {
   };
 
   return (
+    
+    <div className="flex flex-col items-center justify-center min-h-screen bg-cover bg-center " style={{ backgroundImage: `url(${bg.src})` }}> 
+    
+      <Image 
+            src={logo} 
+            alt="logo" 
+            className=' w-36 h-36 mx-auto mb-2'
+          /> 
+        <h1 className="text-2xl text-center mb-6 text-white font-light ">
+          Sign in to Markads TransCo.
+        </h1>
+        <div className="w-96 max-w-md p-8 space-y-6 backdrop-blur-xl bg-white/20 rounded-lg shadow-lg " style={{ marginBottom: "5rem" }}>
+  <form onSubmit={handleSubmit} className="space-y-4">
     <div>
-      <h1>Login</h1>
-      <form onSubmit={handleSubmit}>
-        <div>
-          <label>Username:</label>
-          <input
-            type="text"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </div>
-        <div>
-          <label>Password:</label>
-          <input
-            type="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        {error && <p>{error}</p>}
-        <button type="submit">Login</button>
-      </form>
+      <label className="block text-sm font-medium text-white">Username</label>
+      <input
+        type="text"
+        value={username}
+        onChange={(e) => setUsername(e.target.value)}
+        className="w-full px-3 py-2 mt-1 border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-200 bg-gray-700 text-white"
+      />
     </div>
+    <div>
+      <label className="block text-sm font-medium text-white">Password</label>
+      <input
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        className="w-full px-3 py-2 mt-1 border border-gray-500 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400 bg-gray-700 text-white"
+      />
+      <div className="flex justify-end mt-2">
+        <a href="#" className="text-sm text-blue-400 hover:underline">Forgot password?</a>
+      </div>
+    </div>
+    {error && <p className="text-sm text-red-600">{error}</p>}
+    <button
+      type="submit"
+      className="w-full px-4 py-2 font-medium text-white bg-blue-600 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400"
+    >
+      Sign in
+    </button>
+  </form>
+</div>
+
+
+ 
+</div>
+
   );
 };
 

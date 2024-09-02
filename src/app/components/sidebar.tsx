@@ -4,7 +4,7 @@ import logo from '../images/logo.png';
 
 export default function Sidebar() {
   return (
-    <nav className=" w-64 h-screen bg-white transition-transform -translate-x-full sm:translate-x-0 border flex flex-col">
+    <nav className="w-64 h-screen bg-white border flex flex-col">
       <div className='overflow-y-auto py-5 px-3 flex-1 bg-cool-gray-400 border-gray-200'>
         <div className='mb-8'> 
           <Image 
